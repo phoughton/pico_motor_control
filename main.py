@@ -54,5 +54,5 @@ def slow_s():
     dead_stop()
 
 
-spin("left", 4)
+spin("left", 1)
 
