@@ -9,7 +9,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
 
-      # Set up Python 3.8 environment
       - name: Set up Python 3.9
         uses: actions/setup-python@v3
         with:
