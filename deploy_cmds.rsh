@@ -1,3 +1,4 @@
+# Python Rshell commands to clear the filesystem copy new custom code to the device
 
 echo "local:"
 ls 
@@ -14,7 +15,7 @@ ls pyboard
 echo "deploy new code..."
 cp *.py /pyboard/
 
-echo "should now be have new code:"
+echo "should now have new code:"
 ls /pyboard
 
 echo "restart the pico"
