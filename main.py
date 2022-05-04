@@ -40,7 +40,7 @@ def spin(direction="right", duration=2):
     
     if duration  < 0 or duration > 20:
         raise ValueError("duration was outside expected range")
-        
+
     turn(hand_direction=direction, speed=100, hardness=90)
     time.sleep(duration)
     dead_stop()
@@ -54,5 +54,5 @@ def slow_s():
     dead_stop()
 
 
-spin("right", 3)
+spin("left", 4)
 
