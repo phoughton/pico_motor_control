@@ -34,17 +34,25 @@ def dead_stop():
     board.motorOff(motor_left)
     board.motorOff(motor_right)
 
-time.sleep(3)
-turn(hand_direction="right", speed=100, hardness=90)
-time.sleep(2)
-dead_stop()
-turn(hand_direction="left", speed=100, hardness=90)
-time.sleep(2)
-dead_stop()
-time.sleep(3)
-turn(hand_direction="right", speed=100, hardness=-50)
-time.sleep(2)
-dead_stop()
-turn(hand_direction="left", speed=100, hardness=-50)
-time.sleep(2)
-dead_stop()
+def spin(direction="right", duration=2):
+    if direction not in ["right", "left"]:
+        raise ValueError("direction was invalid")
+    
+    if duration  < 0 or duration > 20:
+        raise ValueError("duration was outside expected range")
+        
+    turn(hand_direction=direction, speed=100, hardness=90)
+    time.sleep(duration)
+    dead_stop()
+
+def slow_s():
+    turn(hand_direction="right", speed=100, hardness=-50)
+    time.sleep(1)
+    dead_stop()
+    turn(hand_direction="left", speed=100, hardness=-50)
+    time.sleep(1)
+    dead_stop()
+
+
+spin("right", 3)
+
